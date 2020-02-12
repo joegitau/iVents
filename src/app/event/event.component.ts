@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-event",
@@ -7,8 +7,12 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class EventComponent implements OnInit {
   @Input() event: any;
+  @Output() eventClick = new EventEmitter();
 
   constructor() {}
-
   ngOnInit() {}
+
+  getEventName() {
+    this.eventClick.emit(this.event.Title);
+  }
 }

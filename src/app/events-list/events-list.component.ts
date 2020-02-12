@@ -9,12 +9,15 @@ import { DataService } from "../data.service";
 })
 export class EventsListComponent implements OnInit {
   public events;
+  handleEventClicked(data) {
+    console.log(data);
+  }
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.dataService.fetchEvents().subscribe(events => {
       this.events = events;
-      console.log(events);
     });
   }
 }
