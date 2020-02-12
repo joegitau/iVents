@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+
+import { Event } from "./event";
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +12,6 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   fetchEvents() {
-    this.http.get(this.url);
+    return this.http.get(this.url);
   }
 }

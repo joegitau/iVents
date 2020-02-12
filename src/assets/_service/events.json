@@ -1,37 +1,102 @@
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Jan Lieberman Concert Series: Journey in Jazz",
-  "startDate": "2025-01-01T19:30",
-  "endDate": "2025-01-01T23:00",
-  "location": {
-    "@type": "Place",
-    "name": "Santa Clara City Library, Central Park Library",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "2635 Homestead Rd",
-      "addressLocality": "Santa Clara",
-      "postalCode": "95051",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    }
+[
+  {
+    "Id": 867,
+    "Name": "c5bdc40d-4824-4b24-8a89-1070915128e5",
+    "Title": "Introduction",
+    "ClipIndex": 0,
+    "DurationInMilliseconds": 42000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
   },
-  "image": [
-    "https://example.com/photos/1x1/photo.jpg",
-    "https://example.com/photos/4x3/photo.jpg",
-    "https://example.com/photos/16x9/photo.jpg"
-  ],
-  "description": "Join us for an afternoon of Jazz with Santa Clara resident and pianist Andy Lagunoff. Complimentary food and beverages will be served.",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.example.com/event_offer/12345_201803180430",
-    "price": "30",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2024-10-20T16:00"
+  {
+    "Id": 868,
+    "Name": "efc88fa2-950a-4a6c-9ec5-b96ab0986014",
+    "Title": "Creating Your First Data-bound Component",
+    "ClipIndex": 1,
+    "DurationInMilliseconds": 370000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
   },
-  "performer": {
-    "@type": "PerformingGroup",
-    "name": "Andy Lagunoff"
+  {
+    "Id": 869,
+    "Name": "5374b4ac-ffba-4302-a508-b597bc44e792",
+    "Title": "Using External Templates",
+    "ClipIndex": 2,
+    "DurationInMilliseconds": 59000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 870,
+    "Name": "ee0004a1-6f92-42d6-b3a9-608abc614448",
+    "Title": "Communicating with Child Components Using @Input",
+    "ClipIndex": 3,
+    "DurationInMilliseconds": 392000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 871,
+    "Name": "1826d528-5f47-42f1-b9ab-f74db17b367a",
+    "Title": "Communicating with Parent Components Using @Output",
+    "ClipIndex": 4,
+    "DurationInMilliseconds": 289000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 872,
+    "Name": "9e57ce70-e1fc-46ce-9038-127f52360454",
+    "Title": "Using Template Variables to Interact with Child Components",
+    "ClipIndex": 5,
+    "DurationInMilliseconds": 199000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 873,
+    "Name": "00cbedc3-63a2-48bf-9b02-0a75edb4ac47",
+    "Title": "Styling Components",
+    "ClipIndex": 6,
+    "DurationInMilliseconds": 133000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 874,
+    "Name": "4e426fed-c494-44ed-a0e8-a0eb00a46e0a",
+    "Title": "Exploring Angular's CSS Encapsulation",
+    "ClipIndex": 7,
+    "DurationInMilliseconds": 295000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 875,
+    "Name": "1cf48cf6-4f65-41c2-bead-32430f978799",
+    "Title": "Adding a Site Header",
+    "ClipIndex": 8,
+    "DurationInMilliseconds": 208000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
+  },
+  {
+    "Id": 876,
+    "Name": "ac796629-c17d-4da8-a6fa-b9371e86f44b",
+    "Title": "Summary",
+    "ClipIndex": 9,
+    "DurationInMilliseconds": 24000,
+    "SupportsStandard": 1,
+    "SupportsWidescreen": 1,
+    "ModuleId": 104
   }
-}
+]
