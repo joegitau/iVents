@@ -1,11 +1,13 @@
-<div class="card">
+<div class="card event mb-3">
   <!-- <img [src]="event.image[0]" [alt]="event.name" class="card-img-top"> -->
   <div class="card-body">
-    <h6 class="card-title">{{ event.Name }}</h6>
-    <h4 class="card-title">{{ event.Title }}</h4>
-    <p class="card-text"></p>
+    <h6 class="card-title">{{ event?.price }}</h6>
+    <h4 class="card-title">{{ event?.name }}</h4>
+    <p class="card-text">{{ event?.location?.city}}</p>
+    <p class="card-text" *ngIf='event?.onlineUrl'>{{ event?.onlineUrl}}</p>
   </div>
   <div class="card-footer">
+    <p class="card-text">{{ event?.date}}</p>
     <button class="btn btn-success" (click)='getEventName()'>View Title</button>
   </div>
 </div>
