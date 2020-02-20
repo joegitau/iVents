@@ -7,13 +7,17 @@ import { AppComponent } from "./app.component";
 import { NavComponent } from "./nav/nav.component";
 import { EventsListComponent } from "./events-list/events-list.component";
 import { EventComponent } from "./event/event.component";
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     EventsListComponent,
-    EventComponent
+    EventComponent,
+    EventDetailsComponent,
+    NotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
