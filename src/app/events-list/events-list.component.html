@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="row" *ngIf='events'>
       <div class="col-md-3" *ngFor='let event of events'>
-        <app-event [event]='event' (eventClick)='handleEventClicked($event)'></app-event>
+        <app-event [event]='event'></app-event>
       </div>
     </div>
   </div>

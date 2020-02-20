@@ -9,9 +9,6 @@ import { DataService } from "../data.service";
 })
 export class EventsListComponent implements OnInit {
   public events;
-  handleEventClicked(data) {
-    console.log(data);
-  }
 
   constructor(private dataService: DataService) {}
 
