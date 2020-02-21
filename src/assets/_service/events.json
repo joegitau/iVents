@@ -5,7 +5,12 @@
     "date": "9/26/2036",
     "time": "10:00 am",
     "price": 599.99,
-    "imageUrl": "/app/assets/images/angularconnect-shield.png",
+    "imageUrl": "https://picsum.photos/200",
+    "location": {
+      "address": "The Palatial America Hotel",
+      "city": "Helsinki",
+      "country": "Finland"
+    },
     "sessions": [
       {
         "id": 1,
@@ -60,11 +65,11 @@
     "date": "4/15/2037",
     "time": "9:00 am",
     "price": 950.0,
-    "imageUrl": "/app/assets/images/ng-nl.png",
+    "imageUrl": "https://picsum.photos/200",
     "location": {
       "address": "The NG-NL Convention Center & Scuba Shop",
-      "city": "Amsterdam",
-      "country": "Netherlands"
+      "city": "Tampere",
+      "country": "Finland"
     },
     "onlineUrl": "http://ng-nl.org",
     "sessions": [
@@ -112,11 +117,11 @@
     "date": "5/4/2037",
     "time": "'9:00 am'",
     "price": 759.0,
-    "imageUrl": "/app/assets/images/ng-conf.png",
+    "imageUrl": "https://picsum.photos/200",
     "location": {
       "address": "The Palatial America Hotel",
       "city": "Salt Lake City",
-      "country": "USA"
+      "country": "Finland"
     },
     "sessions": [
       {
@@ -181,11 +186,11 @@
     "date": "6/10/2037",
     "time": "8:00 am",
     "price": 800.0,
-    "imageUrl": "/app/assets/images/basic-shield.png",
+    "imageUrl": "https://picsum.photos/200",
     "location": {
       "address": "The UN Angular Center",
-      "city": "New York",
-      "country": "USA"
+      "city": "Helsinki",
+      "country": "Finland"
     },
     "sessions": [
       {
@@ -223,11 +228,11 @@
     "date": "2/10/2037",
     "time": "'9:00 am'",
     "price": 400.0,
-    "imageUrl": "/app/assets/images/ng-vegas.png",
+    "imageUrl": "https://picsum.photos/200",
     "location": {
       "address": "The Excalibur",
-      "city": "Las Vegas",
-      "country": " USA "
+      "city": "Turku",
+      "country": " Finland "
     },
     "sessions": [
       {
