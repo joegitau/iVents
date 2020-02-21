@@ -10,12 +10,12 @@ import { DataService } from "../data.service";
 export class EventDetailsComponent implements OnInit {
   event: any;
 
-  constructor(private events: DataService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private eventsService: DataService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
    this.route.paramMap.subscribe( params => {
      let id = +params.get('id'); // coerce into an integer
-     this.events.fetchEvent(id).subscribe( event => this.event = event);
+     this.eventsService.fetchEvent(id).subscribe( event => this.event = event);
    });
   }
 }

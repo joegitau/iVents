@@ -3,7 +3,7 @@
     <h4 class="mb-3">Create New Event</h4>
     <form class="needs-validation" novalidate>
       <div class="mb-3">
-        <label [for]="event-title">Event Title</label>
+        <label for="event-title">Event Title</label>
         <input type="text" class="form-control" id="event-title" >
         <div class="invalid-feedback">
           Event title is required.
@@ -60,7 +60,7 @@
         <input type="text" class="form-control" id="event-image" placeholder="upload an event image">
       </div>
       <button class="btn btn-primary btn-md" type="submit">Create Event</button>
-      <button class="btn btn-secondary btn-md ml-2" type="submit">Cancel</button>
+      <button class="btn btn-secondary btn-md ml-2" (click)='cancelEventCreation()'>Cancel</button>
     </form>
   </div>
 </div>
