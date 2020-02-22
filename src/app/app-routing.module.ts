@@ -4,12 +4,17 @@ import { Routes, RouterModule } from "@angular/router";
 import { EventsListComponent } from "./events-list/events-list.component";
 import { EventDetailsComponent } from "./event-details/event-details.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { CreateEventComponent } from './create-event/create-event.component';
+import { CreateEventComponent } from "./create-event/create-event.component";
+import { EventDetailsGuard } from "./guards/event-details.guard";
 
 const routes: Routes = [
-  {path: 'events/create', component: CreateEventComponent},
+  { path: "events/create", component: CreateEventComponent },
   { path: "events", component: EventsListComponent },
-  { path: "events/:id", component: EventDetailsComponent },
+  {
+    path: "events/:id",
+    component: EventDetailsComponent,
+    canActivate: [EventDetailsGuard]
+  },
   { path: "", redirectTo: "/events", pathMatch: "full" },
   { path: "**", component: NotFoundComponent }
 ];

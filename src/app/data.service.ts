@@ -14,7 +14,7 @@ export class DataService {
 
   fetchEvents(): Observable<IEvent[]> {
     return this.http.get<IEvent[]>(this.eventsUrl).pipe(
-      tap(data => console.log(JSON.stringify(data))),
+      // tap(data => console.log(JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
@@ -28,7 +28,7 @@ export class DataService {
   getEvent(id: number): Observable<IEvent> {
     return this.http.get<IEvent[]>(this.eventsUrl).pipe(
       map((events: IEvent[]) => this.handleEventMapping(events, id)),
-      tap(data => console.log("Event: ", JSON.stringify(data))),
+      // tap(data => console.log("Event: ", JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
