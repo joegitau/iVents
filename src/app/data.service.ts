@@ -25,8 +25,27 @@ export class DataService {
     );
   }
 
+  getEvent(id: number): Observable<IEvent> {
+    return this.http.get<IEvent[]>(this.eventsUrl).pipe(
+      map((events: IEvent[]) => this.handleEventMapping(events, id)),
+      tap(data => console.log("Event: ", JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(err: any) {
     const errMessage = { status: err.status, error: err.message };
     return throwError(errMessage);
+  }
+
+  private handleEventMapping(events: IEvent[], id: number): IEvent {
+    if (id === 0) {
+      return {
+        id: 0,
+        name: "",
+        price: 0
+      };
+    }
+    return events.find(e => e.id === id);
   }
 }
