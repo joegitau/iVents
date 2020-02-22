@@ -21,6 +21,7 @@ const routes: Routes = [
     canActivate: [EventDetailsGuard]
   },
   { path: "", redirectTo: "/events", pathMatch: "full" },
+  { path: "user", loadChildren: "./user/user.module#UserModule" },
   { path: "**", component: NotFoundComponent }
 ];
 
