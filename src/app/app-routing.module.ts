@@ -6,10 +6,15 @@ import { EventDetailsComponent } from "./event-details/event-details.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { CreateEventComponent } from "./create-event/create-event.component";
 import { EventDetailsGuard } from "./guards/event-details.guard";
+import { EventsResolver } from "./events.resolver";
 
 const routes: Routes = [
   { path: "events/create", component: CreateEventComponent },
-  { path: "events", component: EventsListComponent },
+  {
+    path: "events",
+    component: EventsListComponent,
+    resolve: { events: EventsResolver }
+  },
   {
     path: "events/:id",
     component: EventDetailsComponent,

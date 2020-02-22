@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 import { DataService } from "../data.service";
 import { IEvent } from "../event.model";
@@ -12,12 +13,17 @@ export class EventsListComponent implements OnInit {
   events: IEvent[];
   errorMessage: string;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.dataService.fetchEvents().subscribe(
-      events => (this.events = events),
-      error => (this.errorMessage = error)
-    );
+    // this.dataService.fetchEvents().subscribe(
+    //   events => (this.events = events),
+    //   error => (this.errorMessage = error)
+    // );
+
+    this.events = this.route.snapshot.data["events"];
   }
 }
