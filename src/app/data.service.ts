@@ -1,24 +1,32 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { Observable, throwError } from "rxjs";
+import { catchError, tap, map } from "rxjs/operators";
 
-import { Event } from "./event.model";
+import { IEvent } from "./event.model";
 
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
-  url = "/assets/_service/events.json";
+  private eventsUrl = "./assets/_service/events.json";
   constructor(private http: HttpClient) {}
 
-  fetchEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.url);
+  fetchEvents(): Observable<IEvent[]> {
+    return this.http.get<IEvent[]>(this.eventsUrl).pipe(
+      tap(data => console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
   }
 
-  fetchEvent(id: number): Observable<Event> {
+  fetchEvent(id: number): Observable<IEvent> {
     return this.fetchEvents().pipe(
       map(events => events.find(event => event.id === id))
     );
+  }
+
+  private handleError(err: any) {
+    const errMessage = { status: err.status, error: err.message };
+    return throwError(errMessage);
   }
 }
