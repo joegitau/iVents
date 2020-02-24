@@ -21,7 +21,11 @@ const routes: Routes = [
     canActivate: [EventDetailsGuard]
   },
   { path: "", redirectTo: "/events", pathMatch: "full" },
-  { path: "user", loadChildren: "./user/user.module#UserModule" },
+  {
+    path: "user",
+    loadChildren: () =>
+      import("./user/user.module").then(module => module.UserModule)
+  },
   { path: "**", component: NotFoundComponent }
 ];
 
