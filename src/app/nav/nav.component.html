@@ -6,14 +6,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink='events' routerLinkActive='active'
+      <a class="nav-item nav-link" routerLink='/events' routerLinkActive='active'
         routerLinkActiveOptions='{extact: true}'>Events</a>
-      <a class="nav-item nav-link" routerLink='events/create' routerLinkActive='active'>Create Event</a>
+      <a class="nav-item nav-link" routerLink='/events/create' routerLinkActive='active'>Create Event</a>
     </div>
   </div>
   <div class="navbar-right">
     <ul class="nav navbar-nav">
-      <li><a [routerLink]="['/user/profile']">Hello Joe</a></li>
+      <li><a routerLink="/user/profile">Hello Joe</a></li>
     </ul>
   </div>
 </nav>
