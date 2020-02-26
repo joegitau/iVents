@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// defaults
+$primary-bg: #f8f9fe;
+$primary-color: #525f7f;
+
+body {
+  background: $primary-bg;
+  color: $primary-color;
+}
