@@ -4,14 +4,28 @@ import { Routes, RouterModule } from "@angular/router";
 import { EventsListComponent } from "./events-list/events-list.component";
 import { EventDetailsComponent } from "./event-details/event-details.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { CreateEventComponent } from './create-event/create-event.component';
-import { EventDetailsGuardGuard } from './event-details-guard.guard';
+import { CreateEventComponent } from "./create-event/create-event.component";
+import { EventDetailsGuard } from "./guards/event-details.guard";
+import { EventsResolver } from "./events.resolver";
 
 const routes: Routes = [
-  {path: 'events/create', component: CreateEventComponent},
-  { path: "events", component: EventsListComponent },
-  { path: "events/:id", component: EventDetailsComponent, canActivate: [EventDetailsGuardGuard] },
+  { path: "events/create", component: CreateEventComponent },
+  {
+    path: "events",
+    component: EventsListComponent,
+    resolve: { events: EventsResolver }
+  },
+  {
+    path: "events/:id",
+    component: EventDetailsComponent,
+    canActivate: [EventDetailsGuard]
+  },
   { path: "", redirectTo: "/events", pathMatch: "full" },
+  {
+    path: "user",
+    loadChildren: () =>
+      import("./user/user.module").then(module => module.UserModule)
+  },
   { path: "**", component: NotFoundComponent }
 ];
 
