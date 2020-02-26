@@ -12,7 +12,7 @@
                 <div class="form-group">
                   <label for="firstName">First Name</label>
                   <input type="text" class="form-control" id="firstName" formControlName='firstName'
-                    [ngClass]="{'is-valid': (userProfile.get('firstName').touched || userProfile.get('firstName').dirty) && !userProfile.get('firstName').valid}"
+                    [ngClass]="{'is-invalid': (userProfile.get('firstName').touched || userProfile.get('firstName').dirty) && !userProfile.get('firstName').valid}"
                   >
                   <div class="invalid-feedback">
                     <span *ngIf="userProfile.get('firstName').errors?.required">First name is required</span>
@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <label for="lastName">Last Name</label>
                   <input type="text" class="form-control" id="lastName" formControlName='lastName'
-                  [ngClass]="{'is-valid': (userProfile.get('lastName').touched || userProfile.get('lastName').dirty) && !userProfile.get('lastName').valid}"
+                  [ngClass]="{'is-invalid': (userProfile.get('lastName').touched || userProfile.get('lastName').dirty) && !userProfile.get('lastName').valid}"
                   >
                   <div class="invalid-feedback">
                     <span *ngIf="userProfile.get('lastName').errors?.required">Last name is required</span>
@@ -36,34 +36,41 @@
             <div class="form-group">
               <label for="userEmail">Email</label>
               <input type="email" class="form-control" id="userEmail" formControlName='email'
-              [ngClass]="{ 'is-invalid' : (userProfile.get('email').touched || userProfile.get('email').dirty) && !userProfile.get('email').valid }"
+               [ngClass]="{ 'is-invalid' : (userProfile.get('email').touched || userProfile.get('email').dirty) && !userProfile.get('email').valid }"
               >
+              <div class="invalid-feedback">
+                <span *ngIf="userProfile.get('email').errors?.required">Email is required</span>
+                <span *ngIf="userProfile.get('email').errors?.email">Please enter a valid email.</span>
+              </div>
             </div>
             <div class="row" formGroupName='passwordGroup'>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="userPassword">Password</label>
                   <input type="password" class="form-control" id="userPassword" formControlName='password'
-                    ngClass]="{ 'is-invalid' : (userProfile.get('passwordGroup.password').touched || userProfile.get('passwordGroup.password').dirty)
-                                 && !userProfile.get('passwordGroup.password').valid
+                    [ngClass]="{ 'is-invalid' : userProfile.get('passwordGroup').errors ||
+                                ((userProfile.get('passwordGroup.password').touched || userProfile.get('passwordGroup.password').dirty)
+                                 && !userProfile.get('passwordGroup.password').valid)
                              }"
                   >
                   <div class="invalid-feedback">
-                    <span>Password is required.</span>
-                    <span>Password must be longer than 6 characters.</span>
+                    <span *ngIf="userProfile.get('passwordGroup.password').errors?.required">Password is required</span>
+                    <span *ngIf="userProfile.get('passwordGroup.password').errors?.minlength">Password should be atleast 5 characters</span>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="userPasswordConfirm">Confirm Password</label>
-                  <input type="password" class="form-control" id="userPasswordConfirm"
-                  ngClass]="{ 'is-invalid' : (userProfile.get('passwordGroup.confirmPassword').touched || userProfile.get('passwordGroup.confirmPassword').dirty)
-                               && !userProfile.get('passwordGroup.confirmPassword').valid
+                  <input type="password" class="form-control" id="userPasswordConfirm" formControlName='confirmPassword'
+                  [ngClass]="{ 'is-invalid' : userProfile.get('passwordGroup').errors ||
+                               ((userProfile.get('passwordGroup.confirmPassword').touched || userProfile.get('passwordGroup.confirmPassword').dirty)
+                               && !userProfile.get('passwordGroup.confirmPassword').valid)
                            }"
                   >
                   <div class="invalid-feedback">
-                    <span *ngIf="userProfile.get('passwordGroup.confirmPassword').errors?.required">Password does not match.</span>
+                    <span *ngIf="userProfile.get('passwordGroup.confirmPassword').errors?.required">Please confirm your password.</span>
+                    <span *ngIf="userProfile.get('passwordGroup').errors?.match">Password does not match.</span>
                   </div>
                 </div>
               </div>

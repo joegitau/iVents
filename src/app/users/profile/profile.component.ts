@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { PasswordMatcher } from '../utils/passwordMatcher';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -18,9 +20,9 @@ export class ProfileComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.email, Validators.required]],
       passwordGroup: this.fb.group({
-                      password: ['', [Validators.required]],
+                      password: ['', [Validators.required, Validators.minLength(5)]],
                       confirmPassword: ['', [Validators.required]]
-                      })
+                      }, {validator: PasswordMatcher})
     })
   }
 
