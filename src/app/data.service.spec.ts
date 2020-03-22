@@ -3,22 +3,7 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 import { IEvent } from "./event.model";
 import { DataService } from "./data.service";
-import { of, pipe } from "rxjs";
-import { map } from "rxjs/operators";
-
-// fdescribe("DataService", () => {
-//   let service: DataService;
-
-//   beforeEach(() => TestBed.configureTestingModule({
-//     imports: [HttpClientTestingModule],
-//     providers: [DataService]
-//   }));
-
-//   it("should be created", () => {
-//     const service: DataService = TestBed.get(DataService);
-//     expect(service).toBeTruthy();
-//   });
-// });
+import { of } from "rxjs";
 
 fdescribe("DataService", () => {
   let service: DataService;
